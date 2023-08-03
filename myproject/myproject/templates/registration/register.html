@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+Regisztráció
+{% endblock %}
+
+{% block content %}
+  <h2>Regisztráció</h2>
+  <form method="POST">
+  {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Regisztrál</button>
+  </form>
+{% endblock %}
+
