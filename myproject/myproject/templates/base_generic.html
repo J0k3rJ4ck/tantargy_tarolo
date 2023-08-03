@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>{% block title %}Weboldal Címe{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Weboldal címe</h1>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- ide kerül a tartalom -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>Weboldal lábléce</p>
+    </footer>
+</body>
+</html>
