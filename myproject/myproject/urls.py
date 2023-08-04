@@ -20,6 +20,8 @@ from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
 from accounts.views import SignUp
+from .views import main
+from .views import CustomLoginView
 
 
 urlpatterns = [
@@ -29,4 +31,8 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('signup/', views.SignUp.as_view(), name='signup'),
     path('register/', views.register, name='register'),
+    path('main/', views.main, name='main'),
+    path('main/', main, name='main'),
+    path('login/', CustomLoginView.as_view(), name='login'),
+    path('main/', views.main_view, name='main'),
 ]
