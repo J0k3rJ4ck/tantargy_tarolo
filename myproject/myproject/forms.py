@@ -35,8 +35,7 @@ class TantargyForm(forms.ModelForm):
 class KovetelmenyForm(forms.ModelForm):
     class Meta:
         model = Kovetelmeny
-        fields = '__all__'
-        exclude = ['felhasznalo']  # csak a felhasznalo mezőt zárjuk ki
+        exclude = ['felhasznalo', 'statusz']
 
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)
