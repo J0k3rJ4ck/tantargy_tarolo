@@ -35,4 +35,9 @@ urlpatterns = [
     path('main/', main, name='main'),
     path('login/', CustomLoginView.as_view(), name='login'),
     path('main/', views.main_view, name='main'),
+    path('create_tantargy/', views.create_tantargy, name='create_tantargy'),
+    path('create_kovetelmeny/', views.create_kovetelmeny, name='create_kovetelmeny'),
+
+
+
 ]
