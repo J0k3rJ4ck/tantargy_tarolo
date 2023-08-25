@@ -11,7 +11,12 @@
   <a href="{% url 'create_tantargy' %}">Új tantárgy létrehozása</a>
   <br>
   <a href="{% url 'create_kovetelmeny' %}">Új követelmény létrehozása</a>
-
+  <br>
+  <h2>Tantárgyaim:</h2>
+  <ul>
+  {% for tantargy in tantargyak %}
+    <li>{{ tantargy.nev }}</li>
+  {% endfor %}
+  </ul>
 </body>
 </html>
-

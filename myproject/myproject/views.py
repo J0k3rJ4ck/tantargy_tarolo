@@ -16,6 +16,7 @@ from django.contrib.auth.views import LoginView
 from accounts.models import Tantargy
 from .forms import TantargyForm
 from .forms import KovetelmenyForm
+from accounts.models import Tantargy
 
 
 def register(request):
@@ -53,8 +54,10 @@ class CustomLoginView(LoginView):
 def main(request):
     return render(request, 'main.html')
 
+'''
 def main_view(request):
     return render(request, 'main.html')
+'''
 
 def create_tantargy(request):
     if request.method == 'POST':
@@ -80,3 +83,16 @@ def create_kovetelmeny(request):
     else:
         form = KovetelmenyForm(user=request.user)
     return render(request, 'create_kovetelmeny.html', {'form': form})
+
+
+
+def main_view(request):
+    # test
+    print("A main_view fut!")
+    tantargyak = Tantargy.objects.filter(felhasznalo=request.user)
+    return render(request, 'main.html', {'tantargyak': tantargyak})
+
+
+
+
+
